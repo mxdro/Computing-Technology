@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computing & Technology </title>
+
+    <style>
+        :root {
+            --bg: #f5f2e9;
+            --surface: #ffffff;
+            --text: #303b32;
+            --muted: #68756b;
+            --line: #e5e8df;
+            --accent: #789477;
+            --accent-dark: #344b3a;
+            --accent-soft: #e8eee4;
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+        }
+
+        header {
+            background: linear-gradient(135deg, #344b3a, #617d61);
+            color: white;
+            padding: 42px 8%;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header h1 {
+            font-size: 36px;
+            letter-spacing: -0.7px;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            color: #e5eee2;
+        }
+
+        nav {
+            background: #ffffff;
+            padding: 13px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--line);
+            box-shadow: 0 4px 14px rgba(39, 55, 40, 0.06);
+        }
+
+        .nav-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        nav a {
+            color: var(--accent-dark);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.25s ease;
+        }
+
+        nav a:hover {
+            background: var(--accent-soft);
+            color: #263c2c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 34px auto;
+            padding: 0 20px;
+        }
+
+        .hero,
+        .topic {
+            background: var(--surface);
+            padding: 32px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 26px rgba(45, 58, 43, 0.055);
+        }
+
+        .hero {
+            margin-bottom: 28px;
+        }
+
+        .hero h2 {
+            color: var(--accent-dark);
+            font-size: 29px;
+            margin-bottom: 14px;
+        }
+
+        .hero-visual {
+            margin-top: 24px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: var(--accent-soft);
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .topic {
+            margin-bottom: 26px;
+            scroll-margin-top: 90px;
+        }
+
+        .topic h2 {
+            color: var(--accent-dark);
+            border-bottom: 2px solid var(--accent-soft);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-size: 25px;
+        }
+
+        .topic h3 {
+            color: #58765a;
+            margin-top: 23px;
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        p {
+            margin-bottom: 13px;
+        }
+
+        ul, ol {
+            margin: 10px 0 17px 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 3px;
+        }
+
+        li::marker {
+            color: var(--accent);
+        }
+
+        .highlight {
+            background: #f0f4ed;
+            border-left: 4px solid var(--accent);
+            padding: 17px 19px;
+            border-radius: 10px;
+            margin: 20px 0 4px;
+        }
+
+        .topic-image {
+            width: 100%;
+            max-height: 340px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin: 17px 0;
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #526f53;
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            border: 1px solid #e5e9e1;
+            padding: 13px;
+        }
+
+        tr:nth-child(even) {
+            background: #f6f8f3;
+        }
+
+        tr:hover {
+            background: #edf2e9;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 10px;
+        }
+
+        .shortcut {
+            display: inline-block;
+            background: #e8eee4;
+            color: #344b3a;
+            padding: 4px 9px;
+            border-radius: 6px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .review-box {
+            background: #f3f6f0;
+            border: 1px solid #e3e9df;
+            padding: 21px;
+            border-radius: 13px;
+            margin-top: 15px;
+        }
+
+        .review-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            background: #344b3a;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            margin-top: 45px;
+        }
+
+        footer h3 {
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            color: #e0e9dc;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 32px 6%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                margin: 22px auto;
+                padding: 0 13px;
+            }
+
+            .hero,
+            .topic {
+                padding: 21px;
+                border-radius: 14px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .topic h2 {
+                font-size: 21px;
+            }
+
+            .hero-visual img {
+                height: 220px;
+            }
+
+            nav {
+                padding: 10px 12px;
+            }
+
+            .nav-content {
+                gap: 5px;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 7px 9px;
+            }
+
+            table {
+                font-size: 13px;
+                min-width: 500px;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>Computing & Technology</h1>
+        <p>1st Semester Project | Understanding the World of Computing</p>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-content">
+        <a href="#home">Home</a>
+        <a href="#history">History</a>
+        <a href="#information">Information Systems</a>
+        <a href="#database">Database</a>
+        <a href="#memory">Memory</a>
+        <a href="#networks">Networks</a>
+        <a href="#hardware">Hardware</a>
+        <a href="#software">Software</a>
+        <a href="#excel">Excel</a>
+        <a href="#review">Review</a>
+    </div>
+</nav>
+
+<main class="container">
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <h2>Welcome to Computing & Technology</h2>
+
+        <p>
+            Computing and technology play an important role in our daily lives.
+            They help people communicate, learn, work, store information,
+            and solve different problems.
+        </p>
+
+        <p>
+            This website presents important topics about computers,
+            information systems, databases, networks, hardware,
+            software, and Microsoft Excel.
+        </p>
+
+        <div class="hero-visual">
+            <img
+                src="https://tse1.mm.bing.net/th/id/OIP.SO7j5yUL6bu0sE-PYeOXzQHaEJ?r=0&w=1312&h=736&rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="Computer technology and electronic components">
+        </div>
+    </section>
+
+    <!-- TOPIC 1 -->
+    <section class="topic" id="history">
+        <h2>1. History & Forms of Computing</h2>
+
+        <p>
+            Computing is the process of using computers and other devices
+            to process information and solve problems. Computers have
+            developed over time, from simple calculating tools to modern
+            powerful machines.
+        </p>
+
+        <h3>History of Computing</h3>
+
+        <ul>
+            <li><strong>Abacus:</strong> An early counting tool used for calculations.</li>
+            <li><strong>Mechanical Calculator:</strong> A machine designed to perform mathematical operations.</li>
+            <li><strong>First Generation:</strong> Computers used vacuum tubes.</li>
+            <li><strong>Second Generation:</strong> Computers used transistors.</li>
+            <li><strong>Third Generation:</strong> Computers used integrated circuits.</li>
+            <li><strong>Fourth Generation:</strong> Computers used microprocessors.</li>
+            <li><strong>Modern Generation:</strong> Computers use advanced technologies such as artificial intelligence.</li>
+        </ul>
+
+        <h3>Examples of Computing Devices</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Device</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>Desktop Computer</td>
+                    <td>Used for office work, school, and entertainment.</td>
+                    <td>Personal computer</td>
+                </tr>
+                <tr>
+                    <td>Laptop</td>
+                    <td>A portable computer for studying and working.</td>
+                    <td>Notebook computer</td>
+                </tr>
+                <tr>
+                    <td>Smartphone</td>
+                    <td>Used for communication, applications, and internet access.</td>
+                    <td>Android phone</td>
+                </tr>
+                <tr>
+                    <td>Server</td>
+                    <td>Provides services and information to other computers.</td>
+                    <td>Web server</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <strong>Remember:</strong> Computing technology continues to
+            improve and makes many daily activities easier and faster.
+        </div>
+    </section>
+
+    <!-- TOPIC 2 -->
+    <section class="topic" id="information">
+        <h2>2. Information Systems</h2>
+
+        <p>
+            An Information System (IS) is a combination of people,
+            technology, processes, and data that work together to collect,
+            process, store, and distribute information.
+        </p>
+
+        <h3>Components of an Information System</h3>
+
+        <ol>
+            <li><strong>Hardware:</strong> Physical parts of a computer.</li>
+            <li><strong>Software:</strong> Programs and applications.</li>
+            <li><strong>Data:</strong> Raw facts that can be processed.</li>
+            <li><strong>People:</strong> Users who operate the system.</li>
+            <li><strong>Processes:</strong> Steps followed to complete tasks.</li>
+        </ol>
+
+        <h3>Types of Information Systems</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Meaning</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td>TPS</td>
+                    <td>Transaction Processing System</td>
+                    <td>Records daily transactions.</td>
+                </tr>
+                <tr>
+                    <td>MIS</td>
+                    <td>Management Information System</td>
+                    <td>Provides reports for managers.</td>
+                </tr>
+                <tr>
+                    <td>DSS</td>
+                    <td>Decision Support System</td>
+                    <td>Helps people make decisions.</td>
+                </tr>
+                <tr>
+                    <td>OAS</td>
+                    <td>Office Automation System</td>
+                    <td>Helps with office activities.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <strong>Example:</strong> A school enrollment system stores
+            student information, grades, and enrollment records.
+        </div>
+    </section>
+
+    <!-- TOPIC 3 -->
+    <section class="topic" id="database">
+        <h2>3. Database & MySQL</h2>
+
+        <p>
+            A database is an organized collection of information that can
+            be stored, accessed, managed, and updated. It helps users
+            organize large amounts of data.
+        </p>
+
+        <h3>What is MySQL?</h3>
+
+        <p>
+            MySQL is a relational database management system used to
+            store and manage information. It uses SQL (Structured Query
+            Language) to work with data.
+        </p>
+
+        <h3>Important Database Terms</h3>
+
+        <ul>
+            <li><strong>Table:</strong> Organizes data into rows and columns.</li>
+            <li><strong>Row:</strong> A single record in a table.</li>
+            <li><strong>Column:</strong> A category or field of information.</li>
+            <li><strong>Primary Key:</strong> A field that uniquely identifies each record.</li>
+            <li><strong>Foreign Key:</strong> A field that connects related tables.</li>
+        </ul>
+
+        <h3>Example of a Student Database Table</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Student ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Course</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Juan</td>
+                    <td>Dela Cruz</td>
+                    <td>BSCS</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Maria</td>
+                    <td>Santos</td>
+                    <td>BSIT</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Pedro</td>
+                    <td>Reyes</td>
+                    <td>BSCS</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>Basic SQL Commands</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>SQL Command</th>
+                    <th>Purpose</th>
+                </tr>
+                <tr>
+                    <td>CREATE</td>
+                    <td>Creates a database or table.</td>
+                </tr>
+                <tr>
+                    <td>INSERT</td>
+                    <td>Adds new records.</td>
+                </tr>
+                <tr>
+                    <td>SELECT</td>
+                    <td>Retrieves information.</td>
+                </tr>
+                <tr>
+                    <td>UPDATE</td>
+                    <td>Changes existing records.</td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td>Removes records.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <strong>Example:</strong> A school can use MySQL to manage
+            student records, enrollment information, and grades.
+        </div>
+    </section>
+
+    <!-- TOPIC 4 -->
+    <section class="topic" id="memory">
+        <h2>4. Computer Memory & Storage</h2>
+
+        <p>
+            Computer memory and storage are used to keep data and
+            instructions. They help computers operate and save information.
+        </p>
+
+        <img
+            class="topic-image"
+            src="https://www.learncomputerscienceonline.com/wp-content/uploads/2019/07/Computer-Data-Storage-Devices-Computer-Memory.jpg"
+            alt="Computer storage and memory components">
+
+        <h3>Types of Computer Memory</h3>
+
+        <ul>
+            <li><strong>RAM:</strong> Temporary memory used while the computer is running.</li>
+            <li><strong>ROM:</strong> Memory that stores important instructions.</li>
+            <li><strong>Cache:</strong> Small, fast memory that helps the CPU access data quickly.</li>
+        </ul>
+
+        <h3>Types of Storage Devices</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Storage</th>
+                    <th>Description</th>
+                    <th>Use</th>
+                </tr>
+                <tr>
+                    <td>HDD</td>
+                    <td>Hard Disk Drive</td>
+                    <td>Stores files and programs.</td>
+                </tr>
+                <tr>
+                    <td>SSD</td>
+                    <td>Solid State Drive</td>
+                    <td>Fast storage for computers.</td>
+                </tr>
+                <tr>
+                    <td>USB Flash Drive</td>
+                    <td>Portable storage device</td>
+                    <td>Transfers and saves files.</td>
+                </tr>
+                <tr>
+                    <td>Memory Card</td>
+                    <td>Small removable storage</td>
+                    <td>Stores photos and other files.</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>RAM vs ROM</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>RAM</th>
+                    <th>ROM</th>
+                </tr>
+                <tr>
+                    <td>Temporary memory</td>
+                    <td>Stores important instructions</td>
+                </tr>
+                <tr>
+                    <td>Usually loses data when power is off</td>
+                    <td>Retains its contents without normal power</td>
+                </tr>
+                <tr>
+                    <td>Used for running programs</td>
+                    <td>Used for firmware and startup instructions</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- TOPIC 5 -->
+    <section class="topic" id="networks">
+        <h2>5. Data Communication & Networks</h2>
+
+        <p>
+            Data communication is the exchange of information between
+            two or more devices. A computer network connects devices
+            so they can share information and resources.
+        </p>
+
+        <h3>Elements of Data Communication</h3>
+
+        <ol>
+            <li><strong>Sender:</strong> The device that sends the information.</li>
+            <li><strong>Receiver:</strong> The device that receives information.</li>
+            <li><strong>Message:</strong> The information being sent.</li>
+            <li><strong>Transmission Medium:</strong> The path used to send data.</li>
+            <li><strong>Protocol:</strong> Rules used for communication.</li>
+        </ol>
+
+        <h3>Types of Computer Networks</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Network</th>
+                    <th>Meaning</th>
+                    <th>Coverage</th>
+                </tr>
+                <tr>
+                    <td>PAN</td>
+                    <td>Personal Area Network</td>
+                    <td>Small personal area</td>
+                </tr>
+                <tr>
+                    <td>LAN</td>
+                    <td>Local Area Network</td>
+                    <td>Home, school, or office</td>
+                </tr>
+                <tr>
+                    <td>MAN</td>
+                    <td>Metropolitan Area Network</td>
+                    <td>City or large campus</td>
+                </tr>
+                <tr>
+                    <td>WAN</td>
+                    <td>Wide Area Network</td>
+                    <td>Large geographical area</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>Transmission Media</h3>
+
+        <ul>
+            <li><strong>Wired:</strong> Uses cables such as Ethernet and fiber optics.</li>
+            <li><strong>Wireless:</strong> Uses signals such as Wi-Fi and Bluetooth.</li>
+        </ul>
+
+        <div class="highlight">
+            <strong>Example:</strong> When you send a message through
+            the internet, your device communicates with another device
+            through a network.
+        </div>
+    </section>
+
+    <!-- TOPIC 6 -->
+    <section class="topic" id="hardware">
+        <h2>6. Computer Hardware</h2>
+
+        <p>
+            Computer hardware refers to the physical parts of a computer
+            that can be seen and touched. These components work together
+            to perform different tasks.
+        </p>
+
+        <img
+            class="topic-image"
+            src="https://eduinput.com/wp-content/uploads/2023/09/Examples-of-Computer-Hardware.jpg"
+            alt="Computer hardware components">
+
+        <h3>Main Parts of a Computer</h3>
+
+        <ul>
+            <li><strong>CPU:</strong> The Central Processing Unit processes instructions.</li>
+            <li><strong>Motherboard:</strong> Connects the computer's main components.</li>
+            <li><strong>RAM:</strong> Provides temporary working memory.</li>
+            <li><strong>Power Supply:</strong> Provides electrical power to the computer.</li>
+            <li><strong>Storage Drive:</strong> Saves files and programs.</li>
+        </ul>
+
+        <h3>Input and Output Devices</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Input Devices</th>
+                    <th>Output Devices</th>
+                </tr>
+                <tr>
+                    <td>Keyboard</td>
+                    <td>Monitor</td>
+                </tr>
+                <tr>
+                    <td>Mouse</td>
+                    <td>Printer</td>
+                </tr>
+                <tr>
+                    <td>Scanner</td>
+                    <td>Speaker</td>
+                </tr>
+                <tr>
+                    <td>Microphone</td>
+                    <td>Projector</td>
+                </tr>
+                <tr>
+                    <td>Webcam</td>
+                    <td>Headphones</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>Types of Monitors</h3>
+
+        <ul>
+            <li><strong>CRT (Cathode Ray Tube):</strong> An old, bulky monitor that uses electron beams to display images.</li>
+            <li><strong>LCD (Liquid Crystal Display):</strong> A thin monitor that uses liquid crystal to display images.</li>
+            <li><strong>LED (Light Emitting-Diode):</strong> A monitor that uses LED lights to produce bright images.</li>
+            <li><strong>OLED (Organic Light Emitting-Diode):</strong> A monitor that produces its own light for clearer images and better images.</li>
+        </ul>
+
+        <div class="highlight">
+            <strong>Remember:</strong> Hardware needs software to perform
+            useful tasks.
+        </div>
+    </section>
+
+    <!-- TOPIC 7 -->
+    <section class="topic" id="software">
+        <h2>7. Software & Keyboard Shortcuts</h2>
+
+        <p>
+            Software refers to programs and instructions that tell a
+            computer what to do. Unlike hardware, software cannot be
+            physically touched.
+        </p>
+
+        <h3>Types of Software</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Examples</th>
+                </tr>
+                <tr>
+                    <td>System Software</td>
+                    <td>Manages computer hardware and basic operations.</td>
+                    <td>Windows, Linux</td>
+                </tr>
+                <tr>
+                    <td>Application Software</td>
+                    <td>Helps users perform specific tasks.</td>
+                    <td>Word, Excel</td>
+                </tr>
+                <tr>
+                    <td>Utility Software</td>
+                    <td>Maintains and protects the computer.</td>
+                    <td>Antivirus, Disk Cleanup</td>
+                </tr>
+                <tr>
+                    <td>Programming Software</td>
+                    <td>Tools used to create computer programs.</td>
+                    <td>Compiler, Code Editor</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>Common Keyboard Shortcuts</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Shortcut</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td><span class="shortcut">Ctrl + C</span></td>
+                    <td>Copy selected text or files.</td>
+                </tr>
+                <tr>
+                    <td><span class="shortcut">Ctrl + V</span></td>
+                    <td>Paste copied content.</td>
+                </tr>
+                <tr>
+                    <td><span class="shortcut">Ctrl + X</span></td>
+                    <td>Cut selected content.</td>
+                </tr>
+                <tr>
+                    <td><span class="shortcut">Ctrl + Z</span></td>
+                    <td>Undo the previous action.</td>
+                </tr>
+                <tr>
+                    <td><span class="shortcut">Ctrl + S</span></td>
+                    <td>Save a file.</td>
+                </tr>
+                <tr>
+                    <td><span class="shortcut">Ctrl + A</span></td>
+                    <td>Select all content.</td>
+                </tr>
+                <tr>
+                    <td><span class="shortcut">Ctrl + P</span></td>
+                    <td>Print a document.</td>
+                </tr>
+                <tr>
+                    <td><span class="shortcut">Alt + Tab</span></td>
+                    <td>Switch between open applications.</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- TOPIC 8 -->
+    <section class="topic" id="excel">
+        <h2>8. Microsoft Excel</h2>
+
+        <p>
+            Microsoft Excel is a spreadsheet application used to organize,
+            calculate, analyze, and present data. It uses rows, columns,
+            and cells to arrange information.
+        </p>
+
+        <h3>Important Excel Terms</h3>
+
+        <ul>
+            <li><strong>Workbook:</strong> An Excel file.</li>
+            <li><strong>Worksheet:</strong> A sheet inside a workbook.</li>
+            <li><strong>Cell:</strong> The box where a row and column meet.</li>
+            <li><strong>Row:</strong> A horizontal line of cells.</li>
+            <li><strong>Column:</strong> A vertical line of cells.</li>
+            <li><strong>Formula:</strong> An expression used to calculate values.</li>
+        </ul>
+
+        <h3>Common Excel Formulas</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Formula</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>SUM</td>
+                    <td>Adds numbers.</td>
+                    <td>=SUM(A1:A5)</td>
+                </tr>
+                <tr>
+                    <td>AVERAGE</td>
+                    <td>Calculates the average.</td>
+                    <td>=AVERAGE(A1:A5)</td>
+                </tr>
+                <tr>
+                    <td>MAX</td>
+                    <td>Finds the highest value.</td>
+                    <td>=MAX(A1:A5)</td>
+                </tr>
+                <tr>
+                    <td>MIN</td>
+                    <td>Finds the lowest value.</td>
+                    <td>=MIN(A1:A5)</td>
+                </tr>
+                <tr>
+                    <td>COUNT</td>
+                    <td>Counts cells containing numbers.</td>
+                    <td>=COUNT(A1:A5)</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>Example of Student Grades</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Student</th>
+                    <th>Quiz</th>
+                    <th>Activity</th>
+                    <th>Exam</th>
+                    <th>Average</th>
+                </tr>
+                <tr>
+                    <td>Juan</td>
+                    <td>85</td>
+                    <td>90</td>
+                    <td>88</td>
+                    <td>87.67</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>90</td>
+                    <td>92</td>
+                    <td>95</td>
+                    <td>92.33</td>
+                </tr>
+                <tr>
+                    <td>Pedro</td>
+                    <td>80</td>
+                    <td>85</td>
+                    <td>90</td>
+                    <td>85.00</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="highlight">
+            <strong>Example:</strong> Teachers can use Excel to calculate
+            student grades and organize class records.
+        </div>
+    </section>
+
+    <!-- TOPIC 9 -->
+    <section class="topic" id="review">
+        <h2>9. Quick Review & Conclusion</h2>
+
+        <p>
+            Computing and technology are important parts of modern life.
+            They help people communicate, manage information, solve problems,
+            and complete everyday tasks.
+        </p>
+
+        <h3>Quick Review</h3>
+
+        <div class="review-box">
+            <p><strong>1. What is computing?</strong></p>
+            <p>Using computers to process information and solve problems.</p>
+
+            <p><strong>2. What is an information system?</strong></p>
+            <p>A combination of people, technology, data, and processes.</p>
+
+            <p><strong>3. What is a database?</strong></p>
+            <p>An organized collection of information.</p>
+
+            <p><strong>4. What does RAM mean?</strong></p>
+            <p>Random Access Memory.</p>
+
+            <p><strong>5. What is a computer network?</strong></p>
+            <p>A connection between devices for sharing information and resources.</p>
+
+            <p><strong>6. What is hardware?</strong></p>
+            <p>The physical parts of a computer.</p>
+
+            <p><strong>7. What is software?</strong></p>
+            <p>Programs and instructions used by a computer.</p>
+
+            <p><strong>8. What is Microsoft Excel?</strong></p>
+            <p>A spreadsheet application used to organize and calculate data.</p>
+        </div>
+
+        <h3>Conclusion</h3>
+
+        <p>
+            In conclusion, learning about computing and technology helps
+            us understand how computers work and how they are used in
+            education, business, communication, and everyday activities.
+            By understanding these topics, students can develop useful
+            knowledge and skills for the future.
+        </p>
+
+        <div class="highlight">
+            <strong>Thank you for visiting!</strong>
+            Keep learning and exploring the world of Computing & Technology.
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <h3>Computing & Technology</h3>
+    <p>Learning Today, Creating Tomorrow.</p>
+    <p>&copy; Created by: Maasin Althea, Ebardo Hazel & Domero Jaymar.</p>
+</footer>
+
+</body>
+</html>
